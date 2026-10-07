@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Slipway</title>
+<meta name="description" content="Download and install Slipway, the desktop app for Git worktrees, terminals, GitHub and agents.">
+<link rel="icon" href="logo.svg">
+<style>
+ :root{--a:#6b7fd7;--a2:#8b9ce6;--ink:#e6eaf2;--muted:#919eab;--bg:#161c24;--card:#212b36;--line:#2f3b48}
+ *{margin:0;padding:0;box-sizing:border-box}
+ body{font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+ main{max-width:640px;margin:0 auto;padding:56px 24px 40px}
+ img.logo{width:88px;height:88px;border-radius:20px;display:block;margin-bottom:20px}
+ h1{font-size:34px;letter-spacing:-.5px}
+ h2{font-size:20px;margin:36px 0 10px}
+ .tag{font-size:19px;color:var(--muted);margin:6px 0 28px}
+ p{margin:0 0 14px}
+ ul,ol{margin:0 0 14px 22px}
+ li{margin-bottom:6px}
+ a{color:var(--a2)}
+ code{font:14px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--card);padding:2px 6px;border-radius:4px}
+ .downloads{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 10px}
+ .btn{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:8px;font-weight:600;text-decoration:none;color:#fff;background:var(--a);border:1px solid var(--a)}
+ .btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+ .btn:hover{filter:brightness(1.1)}
+ .btn:focus-visible,a:focus-visible{outline:2px solid var(--a2);outline-offset:3px}
+ .btn small{font-weight:400;opacity:.8;margin-left:8px}
+ .note{font-size:14px;color:var(--muted)}
+ .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+ .card h3{font-size:16px;margin-bottom:8px}
+ .card ol{margin-bottom:0}
+ footer{border-top:1px solid var(--line);margin-top:44px;padding-top:16px;font-size:14px;color:var(--muted)}
+ footer a{color:inherit;margin-right:16px}
+</style>
+</head>
+<body>
+<main>
+ <img class="logo" src="logo.svg" alt="Slipway logo">
+ <h1>Slipway</h1>
+ <p class="tag">Git worktrees, terminals, GitHub and your coding agents, in one desktop window.</p>
+ <p>Slipway keeps a worktree per branch, opens a terminal in each, shows the issue, pull request and
+ project-board status beside it, and lets you watch what your agents are doing. Everything runs on your
+ computer with your own <code>git</code>, <code>gh</code> and agent sign-ins.</p>
+
+ <h2>Download</h2>
+ <div class="downloads">
+  <a class="btn" id="dl-mac" href="https://github.com/OscarC178/devhub/releases/latest/download/Slipway.dmg">Download for Mac <small>Apple silicon, .dmg</small></a>
+  <a class="btn" id="dl-win" href="https://github.com/OscarC178/devhub/releases/latest/download/Slipway.exe">Download for Windows <small>64-bit, one .exe</small></a>
+ </div>
+ <p class="note">Private build. The links work when you are signed in to GitHub with access to the
+ <code>OscarC178/devhub</code> repository. No access yet? Ask Oscar.</p>
+
+ <h2>Install</h2>
+ <div class="card">
+  <h3>Mac</h3>
+  <ol>
+   <li>Open <code>Slipway.dmg</code> and drag Slipway to Applications.</li>
+   <li>Open it. macOS blocks it the first time (it is not notarised): go to <b>System Settings
+    › Privacy &amp; Security</b>, scroll down and click <b>Open Anyway</b>.</li>
+   <li>That is it. Slipway updates itself from then on.</li>
+  </ol>
+ </div>
+ <div class="card">
+  <h3>Windows</h3>
+  <ol>
+   <li>Put <code>Slipway.exe</code> anywhere, the Desktop is fine, and double-click it.</li>
+   <li>SmartScreen says "Windows protected your PC" the first time (it is not signed): click
+    <b>More info</b>, then <b>Run anyway</b>. It unpacks itself and opens a few seconds later.</li>
+   <li>Windows copies do not update themselves. Come back here for a new version.</li>
+  </ol>
+ </div>
+
+ <h2>What you need</h2>
+ <ul>
+  <li><b>git</b>, and the <b>GitHub CLI</b> signed in: <code>gh auth login</code>.</li>
+  <li>An agent CLI if you want the agent features: Claude Code, Codex, Gemini or Grok, signed in.</li>
+  <li>macOS 11 or later on Apple silicon, or 64-bit Windows 10 or 11.</li>
+ </ul>
+
+ <footer>
+  <a href="https://github.com/OscarC178/devhub">GitHub</a>
+  <a href="https://github.com/OscarC178/devhub/releases/latest">Latest release</a>
+  <a href="/Open-Loops/">Open Loops</a>
+ </footer>
+</main>
+<script>
+ // Make the visitor's own platform the primary button; the other stays visible as secondary
+ (function () {
+   var mac = /Mac/.test(navigator.platform) && !/iPhone|iPad/.test(navigator.userAgent);
+   var win = /Win/.test(navigator.platform);
+   if (mac) document.getElementById("dl-win").classList.add("secondary");
+   if (win) document.getElementById("dl-mac").classList.add("secondary");
+ })();
+</script>
+</body>
+</html>

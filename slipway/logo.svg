@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Slipway app icon: two rails running down a ramp into the waterline.
+       Drawn full-bleed; scripts/make-icon.js masks it to the macOS rounded
+       square (824px body, 184px radius) and writes build/icon.png. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#212b36"/>
+      <stop offset="1" stop-color="#161c24"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9aa9f0"/>
+      <stop offset="1" stop-color="#6b7fd7"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1024" height="1024" fill="url(#bg)"/>
+  <g>
+    <!-- rails (converge slightly towards the top for perspective) -->
+    <polygon points="430,250 474,250 400,700 330,700" fill="url(#rail)"/>
+    <polygon points="550,250 594,250 694,700 624,700" fill="url(#rail)"/>
+    <!-- sleepers -->
+    <polygon points="404,330 620,330 628,366 398,366" fill="#dce6ff" opacity="0.55"/>
+    <polygon points="384,440 646,440 656,482 376,482" fill="#dce6ff" opacity="0.55"/>
+    <polygon points="360,566 676,566 688,614 350,614" fill="#dce6ff" opacity="0.55"/>
+    <!-- waterline -->
+    <path d="M-3 720 q52 -36 103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 V1024 H-3 Z" fill="#4076b7" opacity="0.9"/>
+    <path d="M-3 790 q52 -36 103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 t103 0 V1024 H-3 Z" fill="#2d496a"/>
+  </g>
+</svg>
